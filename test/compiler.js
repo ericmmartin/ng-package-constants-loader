@@ -12,7 +12,7 @@ export default (fixture, options = {}) => {
     },
     module: {
       rules: [{
-        test: path.resolve(__dirname, 'config.json'),
+        test: path.resolve(__dirname, 'package.json'),
         use: {
           loader: path.resolve(__dirname, '../index.js'),
           options: options

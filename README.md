@@ -17,7 +17,7 @@ module: {
   rules: [
     {
       // Let's take our config file by absolute url
-      test: path.resolve(__dirname + 'app/env-config.json'),
+      test: path.resolve(__dirname + 'package.json'),
       use: {
         loader: 'ng-package-constants-loader',
         options: {

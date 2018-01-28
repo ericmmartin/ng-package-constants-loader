@@ -1,12 +1,12 @@
 import compiler from './compiler.js';
 
 test('Verify Angular module name', async () => {
-  const stats = await compiler('config.json', {
+  const stats = await compiler('package.json', {
     moduleName: 'app.constants',
-    configKey: 'all'
+    configKey: 'config.all',
+    wrap: 'es6'
   });
-  console.log(stats);
+  
   const output = stats.toJson().modules[0].source;
   console.log(output);
-  //expect(output).toBe(`export default "Hey Alice!\\n"`);
 });
