@@ -9,7 +9,7 @@ export default function loader(source) {
   let module;
   const moduleName = options.moduleName || 'app.constants';
   const { configKey } = options;
-  const createModule = !!options.createModule;
+  const createModule = options.createModule !== false;
 
   try {
     data = JSON.parse(source);
@@ -38,8 +38,6 @@ export default function loader(source) {
     if (options.wrap) {
       if (typeof options.wrap === 'string' && (options.wrap.toUpperCase() === 'ES6')) {
         output = `import angular from "angular";\nexport default ${module}`;
-      } else if (typeof options.wrap === 'string') {
-        output = options.wrap.replace('NG-PACKAGE-CONTENT', module);
       } else {
         output = `(function () { \n return ${module}\n})();\n`;
       }

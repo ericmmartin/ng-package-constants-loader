@@ -5,6 +5,7 @@ test('Verify Angular module name', async () => {
     moduleName: 'app.constants',
     configKey: 'config.all',
     wrap: 'es6',
+    createModule: true,
   });
 
   const output = stats.toJson().modules[0].source;
