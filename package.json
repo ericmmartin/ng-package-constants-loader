@@ -1,7 +1,7 @@
 {
   "name": "ng-package-constants-loader",
   "description": "Webpack loader to generate a config file from values in your projects package.json file",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "keywords": [
     "webpack",
     "angularjs",
