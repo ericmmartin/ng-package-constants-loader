@@ -1,6 +1,6 @@
 import path from 'path';
+import Memoryfs from 'memory-fs';
 import webpack from 'webpack';
-import memoryfs from 'memory-fs';
 
 export default (fixture, options = {}) => {
   const compiler = webpack({
@@ -8,20 +8,22 @@ export default (fixture, options = {}) => {
     entry: `./${fixture}`,
     output: {
       path: path.resolve(__dirname),
-      filename: 'bundle.js'
+      filename: 'bundle.js',
     },
     module: {
-      rules: [{
-        test: path.resolve(__dirname, 'package.json'),
-        use: {
-          loader: path.resolve(__dirname, '../index.js'),
-          options: options
-        }
-      }]
-    }
+      rules: [
+        {
+          test: path.resolve(__dirname, 'package.json'),
+          use: {
+            loader: path.resolve(__dirname, '../src/index.js'),
+            options,
+          },
+        },
+      ],
+    },
   });
 
-  compiler.outputFileSystem = new memoryfs();
+  compiler.outputFileSystem = new Memoryfs();
 
   return new Promise((resolve, reject) => {
     compiler.run((err, stats) => {
@@ -30,4 +32,4 @@ export default (fixture, options = {}) => {
       resolve(stats);
     });
   });
-}
+};

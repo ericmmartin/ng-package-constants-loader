@@ -5,7 +5,7 @@ Webpack loader to generate an Angular constants module from values in your proje
 ## Installation
 
 ```
-npm install ng-package-config-loader --save-dev
+npm install ng-package-constants-loader --save-dev
 ```
 
 ## Usage

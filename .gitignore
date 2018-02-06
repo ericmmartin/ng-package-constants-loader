@@ -1,3 +1,6 @@
+dist/
+.eslintcache
+
 # Logs
 logs
 *.log
