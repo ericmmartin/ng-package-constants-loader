@@ -25,11 +25,11 @@
   },
   "homepage": "https://github.com/ericmmartin/ng-package-constants-loader",
   "devDependencies": {
-    "babel-jest": "^22.1.0",
-    "babel-preset-env": "^1.6.1",
-    "jest": "^22.1.4",
-    "memory-fs": "^0.4.1",
-    "webpack": "^3.10.0"
+    "babel-jest": "^29.7.0",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^29.7.0",
+    "memory-fs": "^0.5.0",
+    "webpack": "^5.97.1"
   },
   "config": {
     "string": "my string",
